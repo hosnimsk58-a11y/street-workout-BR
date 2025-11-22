@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="calisthenics, street workout, entraînement, fitness, musculation, sport"> 
+    <meta name="description" content=> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="robots" content="index, follow"> 
+    <meta property="og:title" content="Calisthenics Elite - Street Workout"> 
+    <meta name="twitter:card" content="Calisthenics Elite - Street Workout"> 
+    <script>
+        function toggleMenu() {
+            document.getElementById('nav-links').classList.toggle('active');
+        }
+    </script>
+    <style>
+        /*<meta charset="utf-8" />
+    <meta name="keywords" content="calisthenics, street workout, entraînement, fitness, musculation, sport"> pour mots
+    clées 
+    <meta name="description" content=> " pour description"
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> "bon affichage sur telephone"
+    <meta name="robots" content="index, follow"> "pour google"
+    <meta property="og:title" content="Calisthenics Elite - Street Workout"> "pour faire un titre exact(open graph)"
+    <meta name="twitter:card" content="Calisthenics Elite - Street Workout"> "pour twitter" */
+        html {
+            scroll-behavior: smooth;
+            transition: 2s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'lexend';
+            background: #080808;
+            color: white;
+            overflow-x: hidden;
+        }
+
+
+        header {
+            width: 98%;
+            padding: 25px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .logo img {
+            width: 70px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            transition: .3s;
+        }
+
+        nav a:hover {
+            color: #ffb300;
+        }
+
+        .burger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .burger div {
+            width: 35px;
+            height: 4px;
+            background: white;
+            transition: 0.3s;
+        }
+
+        @media(max-width: 768px) {
+            nav ul {
+                position: absolute;
+                right: 0;
+                top: 90px;
+                background: #0f0f0f;
+                width: 220px;
+                padding: 25px;
+                flex-direction: column;
+                display: none;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .burger {
+                display: flex;
+            }
+        }
+
+
+        .hero {
+            height: 100vh;
+            background: url("./img/c.jpg") center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .hero h1 {
+            font-size: 65px;
+            font-weight: 700;
+            text-shadow: 0 0 25px black;
+        }
+
+        @media(max-width: 768px) {
+            .hero h1 {
+                font-size: 38px;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+
+        .features {
+            padding: 80px 50px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            animation: fadeInUp 1.3s ease-in-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .box {
+            background: #111;
+            padding: 25px;
+            border-radius: 20px;
+            transition: .3s;
+        }
+
+        .box:hover {
+            transform: translateY(-10px);
+            background: #181818;
+        }
+
+        .box img {
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        .box h3 {
+            margin-top: 20px;
+            font-size: 24px;
+        }
+
+        .box p {
+            margin-top: 10px;
+            line-height: 1.6;
+            opacity: .9;
+        }
+
+
+        .banner {
+            height: 60vh;
+            margin-top: 50px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeInUp 1.3s ease-in-out;
+        }
+
+        .banner h2 {
+            font-size: 50px;
+            text-shadow: 0 0 20px black;
+        }
+
+
+        .footer {
+            background: #111;
+            color: #eee;
+            padding: 40px 20px 15px;
+            font-family: Arial, sans-serif;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .footer-section {
+            flex: 1 1 250px;
+        }
+
+        .footer-section h3,
+        .footer-section h4 {
+            margin-bottom: 12px;
+            color: #ffcc00;
+        }
+
+        .footer-section p {
+            line-height: 1.5;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin: 8px 0;
+        }
+
+        .footer-section ul li a {
+            color: #eee;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: #ffcc00;
+        }
+
+        .socials a {
+            font-size: 1.6rem;
+            margin-right: 15px;
+            color: #eee;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .socials a:hover {
+            color: #ffcc00;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            border-top: 1px solid #333;
+            padding-top: 15px;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+
+        h2 {
+            font-family: 'lexend';
+            font-size: 30px;
+        }
+
+        span {
+            color: brown;
+        }
+
+        #gg {
+            display: flex;
+            gap: 20px;
+            font-size: 10px;
+
+
+        }
+
+        #vv {
+            font-size: 20px;
+            border-radius: 10px;
+
+        }
+
+        h3 {
+            font-family: ;
+
+
+        }
+
+        #backg {
+            margin-top: 200px;
+            margin-bottom: 500px;
+            height: 710px;
+            width: 100%;
+            background-image: url("./img/vv.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #form {
+            margin-top: 60px;
+            margin-bottom: 10px;
+
+            padding: 30px;
+            border-radius: 20px;
+            width: 500px;
+
+        }
+
+        #sss {
+            margin-left: 120px;
+            color: rgba(60, 40, 40, 0.183);
+            font-size: 30px;
+        }
+
+        #pal {
+            margin-top: 30px;
+            margin-left: 10px;
+
+        }
+
+        #inn input {
+            margin-bottom: 20px;
+            outline: none;
+            width: 70%;
+            padding: 15px;
+            border-radius: 25px;
+            background-color: transparent;
+            border: 2px solid rgb(255, 255, 255, 0.2);
+            color: rgb(18, 18, 16);
+            padding-right: 40px;
+
+        }
+
+        button {
+            padding: 15px;
+            outline: none;
+            margin-top: 30px;
+            margin-left: 70px;
+            width: 60%;
+            border-radius: 25px;
+            border: 2px solid transparent;
+            transition: 0.5s;
+
+        }
+
+        button:hover {
+            background-color: transparent;
+            border: 2px solid transparent rgb(255, 255, 255, 0.2);
+            color: aqua;
+        }
+
+        #nav {
+            position: fixed;
+            left: 60pc;
+        }
+
+        #df {
+            text-align: center;
+            margin-top: 70px;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #tt {
+            text-decoration: none;
+            color: black;
+            font-size: 25px;
+            font-family: Arial, Helvetica, sans-serif;
+
+
+        }
+
+        #bt {
+            color: rgb(61, 54, 42);
+            width: 100px;
+            margin-left: 700px;
+            border-radius: 10px;
+            padding: 10px;
+            margin-top: 10px;
+
+        }
+
+        #bt:hover {
+            background-color: red;
+            color: burlywood;
+
+        }
+
+        #qq {
+            animation-name: ss;
+            position: relative;
+            animation-duration: 3s;
+            animation-fill-mode: forwards;
+        }
+
+        button {
+            background-color: #e5a6a6;
+        }   
+        
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <h2 id="qq">Street <span>Workout</span></h2>
+        </div>
+        <nav>
+            <ul id="nav-links">
+                <li><a href="#a">Accueil</a></li>
+                <li><a href="#skills">skills</a></li>
+                <li><a href="#aaac">logo</a></li>
+                <li><a href="#aaa">Communauté</a></li>
+                <li><a href="#cc">About</a></li>
+            </ul>
+        </nav>
+        <div class="burger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+
+        </div>
+    </header>
+
+    <section class="hero" id="a">
+
+    </section>
+
+    <section class="features" id="skills">
+        <div class="box">
+            <img src="./img/vsit.jpg" />
+            <h3>V-sit</h3>
+            <p>This exercise involves balancing on your glutes with your legs and upper body raised, forming a 'V'
+                shape. Maintaining this position requires significant core strength and stability, making it a highly
+                effective exercise for building core endurance and control.</p>
+        </div>
+
+        <div class="box">
+            <img src="./img/plance.jpg" />
+            <h3>Planche</h3>
+            <p>The planche is one of the most iconic and impressive figures of Street Workout. This static position,
+                where the body is kept parallel to the ground only by the strength of the arms, requires a perfect
+                combination of strength, balance and body control.</p>
+        </div>
+
+        <div class="box">
+            <img src="./img/front.jpg" />
+            <h3>Front-lever</h3>
+            <p>The front lever, an advanced calisthenics exercise, involves suspending yourself horizontally beneath a
+                bar or rings. Achieving this position requires pulling your shoulders back, creating a straight,
+                plank-like alignment of your body.</p>
+        </div>
+        <div class="box">
+            <img src="./img/back.jpg" />
+            <h3>Back-lever</h3>
+            <p>The backlever (hanging scale rearways) is an isometric anterior chain static element. Backlever as
+                portrayed in the MAG COP. When performing a backlever, you hold your body horizontally above the floor,
+                stomach down, arms in the back holding the execution surface.</p>
+        </div>
+    </section>
+
+
+    <section class="banner" id="aaac">
+        <div id="gg">
+            <img src="./img/xx.webp" alt="" id="vv">
+            <img src="./img/logo.jpg" alt="" " id=" vv">
+            <img src="./img/one.jpg" alt="" id="vv">
+        </div>
+
+
+    </section>
+    <aside id="aaa">
+
+        <div id="backg">
+            <div id="form">
+                <h1 id="sss"> Login</h1>
+                <div id="pal">
+                    <div id="inn"> <input type="text" name="" id="" placeholder="votre nom"><br>
+                        <input type="text" name="" id="" placeholder="votre prenom"><br>
+                        <input type="tel" name="" id="" placeholder="votre telephone"><br>
+                    </div>
+                    <input type="radio" name="a" id="">Débutant <input type="radio" name="a" id=""> Moyen <input
+                        type="radio" name="a" id="">Accélerée <br>
+
+                    <button>sign in</button>
+                </div>
+    </aside>
+
+    <footer class="footer" id="cc">
+        <div class="footer-container">
+
+            <div class="footer-section">
+                <h3>Calisthénics Bien Organisée</h3>
+                <p>Construisez un corps fort, mobile et équilibré grâce à des entraînements intelligents.</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li>tel:+21689545212</li>
+                    <li>gmail:calis@gmail.com</li>
+                    <li>fcb:Calisthenics.br</li>
+                    <li>Youtube:Street workout</li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h4>Réseaux sociaux</h4>
+                <div class="socials">
+                    <a href="#" aria-label="Instagram">📸</a>
+                    <a href="#" aria-label="YouTube">▶️</a>
+                    <a href="#" aria-label="TikTok">🎵</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Calisthénics Bien Organisée — Tous droits réservés</p>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
