@@ -75,6 +75,8 @@
 
         nav a:hover {
             color: #ffb300;
+            border-bottom: 2px solid #ffb300;
+            padding-bottom: 2px;
         }
 
         .burger {
@@ -425,7 +427,69 @@
 
         button {
             background-color: #e5a6a6;
-        }   
+        }
+        #qq{
+            animation: nai 3s infinite;
+            animation-fill-mode: forwards;
+        } 
+        @keyframes nai{
+            from{
+                left:0px;
+            }
+            to{
+                left: 100px;
+                color: brown;
+            }
+        }  
+        table{
+        width: 100%;
+        max-width: 600px;
+        margin:auto;
+        border-collapse: collapse;
+        background: #141414;
+        color: #fff;
+        box-shadow: 0 0 20px rgba(0,0,0,0.6);
+        border-radius: 12px;
+        overflow: hidden;
+        animation: fadeIn 1s ease;
+    }
+
+    th{
+        background: #ff4d00;
+        padding: 15px;
+        font-size: 20px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-align:center;
+    }
+
+    td{
+        padding: 15px;
+        font-size: 18px;
+        border-bottom: 1px solid #2a2a2a;
+        text-align:center;
+    }
+
+    tr:hover td{
+        background: #262626;
+        transition: 0.3s ease;
+    }
+
+    tr:last-child td{
+        border-bottom: none;
+    }
+
+    @keyframes fadeIn {
+        from {opacity: 0; transform: translateY(20px);}
+        to   {opacity: 1; transform: translateY(0);}
+    }
+
+    @media(max-width: 480px){
+        th, td {
+            font-size: 15px;
+            padding: 10px;
+        }
+    }
         
     </style>
 </head>
@@ -440,8 +504,8 @@
             <ul id="nav-links">
                 <li><a href="#a">Accueil</a></li>
                 <li><a href="#skills">skills</a></li>
-                <li><a href="#aaac">logo</a></li>
-                <li><a href="#aaa">Communauté</a></li>
+                <li><a href="#aaac">programme</a></li>
+                <li><a href="#aaa">inscription</a></li>
                 <li><a href="#cc">About</a></li>
             </ul>
         </nav>
@@ -493,9 +557,20 @@
 
     <section class="banner" id="aaac">
         <div id="gg">
-            <img src="./img/xx.webp" alt="" id="vv">
-            <img src="./img/logo.jpg" alt="" " id=" vv">
-            <img src="./img/one.jpg" alt="" id="vv">
+            <table>
+    <tr>
+        <th>Exercice</th>
+        <th>Répétitions / Temps</th>
+    </tr>
+
+    <tr><td>Tractions</td><td>4 × 8</td></tr>
+    <tr><td>Dips</td><td>4 × 12</td></tr>
+    <tr><td>Pompes</td><td>4 × 20</td></tr>
+    <tr><td>Tractions australiennes</td><td>3 × 12</td></tr>
+    <tr><td>Relevés de jambes</td><td>3 × 10</td></tr>
+    <tr><td>Gainage</td><td>3 × 45 sec</td></tr>
+    <tr><td>Squats</td><td>4 × 20</td></tr>
+</table>
         </div>
 
 
